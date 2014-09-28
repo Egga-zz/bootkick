@@ -8,10 +8,11 @@ repositories {
 }
 
 dependencies {
-    testCompile (
+    testCompile(
             'junit:junit:4.11',
-            'com.jayway.restassured:rest-assured:2.3.3'     ,
-            'com.jayway.restassured:json-path:2.3.3'
+            'com.jayway.restassured:rest-assured:2.3.3',
+            'com.jayway.restassured:json-path:2.3.3',
+            "org.springframework.boot:spring-boot-starter-test:1.1.7.RELEASE"
     )
     compile("org.springframework.boot:spring-boot-starter-web:1.1.7.RELEASE")
 }
@@ -25,7 +26,7 @@ buildscript {
         maven.url
     }
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.1.7.RELEASE"
         classpath 'org.springframework:springloaded:1.2.0.RELEASE'
     }
 }

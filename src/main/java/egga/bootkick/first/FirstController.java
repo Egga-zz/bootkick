@@ -10,7 +10,7 @@ import static java.util.UUID.randomUUID;
  * @author egga
  */
 @Controller
-public class Whomp {
+public class FirstController {
 
     @RequestMapping("/")
     @ResponseBody
