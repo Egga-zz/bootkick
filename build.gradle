@@ -14,7 +14,10 @@ dependencies {
             'com.jayway.restassured:json-path:2.3.3',
             "org.springframework.boot:spring-boot-starter-test:1.1.7.RELEASE"
     )
-    compile("org.springframework.boot:spring-boot-starter-web:1.1.7.RELEASE")
+    compile(
+            "org.springframework.boot:spring-boot-starter-web:1.1.7.RELEASE",
+            "org.springframework.boot:spring-boot-starter-actuator:1.1.7.RELEASE"
+    )
 }
 
 buildscript {
