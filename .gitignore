@@ -1,0 +1,13 @@
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+.idea
+gradle
+.gradle
+/build
+/out
+/*.iml
+/*.ipr
+/*.iws
