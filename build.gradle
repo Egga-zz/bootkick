@@ -1,27 +1,27 @@
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+buildscript {
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.1.7.RELEASE"
+        classpath 'org.springframework:springloaded:1.2.0.RELEASE'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: "jacoco"
+apply plugin: 'coveralls'
+
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 version = '1.0'
 
-repositories {
-    mavenCentral()
-}
-
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-    dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.1.7.RELEASE"
-        classpath 'org.springframework:springloaded:1.2.0.RELEASE'
-    }
-}
 
 dependencies {
     compile(
@@ -32,7 +32,6 @@ dependencies {
             'junit:junit:4.12',
             'com.jayway.restassured:rest-assured:2.3.3',
             'com.jayway.restassured:json-path:2.3.3',
-            "org.springframework.boot:spring-boot-starter-test:1.1.7.RELEASE"
     )
 }
 
@@ -43,3 +42,12 @@ idea {
         outputDir = file("$buildDir/classes/main/")
     }
 }
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+}
+
+task stage(dependsOn: ['assemble'])
