@@ -4,7 +4,6 @@ buildscript {
     }
     dependencies {
         classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE'
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:0.3.0'
     }
 }
 
@@ -12,7 +11,6 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: "jacoco"
-apply plugin: 'coveralls'
 
 
 sourceCompatibility = '1.8'
@@ -43,13 +41,6 @@ idea {
     module {
         inheritOutputDirs = false
         outputDir = file("$buildDir/classes/main/")
-    }
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled = true // coveralls plugin depends on xml format report
-        html.enabled = true
     }
 }
 
