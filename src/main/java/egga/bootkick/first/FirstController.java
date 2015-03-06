@@ -17,7 +17,7 @@ public class FirstController {
     Dto home() {
         return new Dto(
                 new UserDto(randomUUID(), "hank"),
-                new AccountDto(randomUUID(), "free")
+                new AccountDto(randomUUID(), "premium")
         );
     }
 }

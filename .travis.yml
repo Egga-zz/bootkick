@@ -6,6 +6,6 @@ deploy:
   provider: heroku
   api_key:
     secure: KGXKsrwDyR3OA8jHzp1moWX+r/bUyncCVyuqN+74VONBy354QEXPR2CSSWLr0xmLFhNJkpXEBHGxPgYtirMtdVuWMIP1jjJe68ZhmuQEgtJewFvYUlheWzcT5+SDPJQzF0R4Zjf32dhILFIXq3GlnfuWj1XKmAOqMVUSpbHAbsQ=
-  app: y
+  app: bootkick
   on:
     repo: Egga/bootkick
