@@ -1,6 +1,6 @@
-package egga.bootkick.first;
+package de.egga.first;
 
-import egga.bootkick.configuration.MainConfiguration;
+import de.egga.configuration.MainConfiguration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.IntegrationTest;
@@ -23,6 +23,6 @@ public class FirstControllerTest {
 
     @Test
     public void testName() throws Exception {
-        get("/api/").then().body("user.name", is(equalTo("hank")));
+        get("/api/first/").then().body("user.name", is(equalTo("hank")));
     }
 }

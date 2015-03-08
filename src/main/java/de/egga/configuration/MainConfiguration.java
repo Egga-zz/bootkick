@@ -1,4 +1,4 @@
-package egga.bootkick.configuration;
+package de.egga.configuration;
 
 import com.mangofactory.swagger.plugin.EnableSwagger;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * @author egga
  */
-@ComponentScan
+@ComponentScan(basePackages = "de.egga")
 @EnableAutoConfiguration
 @EnableSwagger
 public class MainConfiguration {

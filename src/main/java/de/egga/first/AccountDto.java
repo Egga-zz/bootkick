@@ -1,4 +1,4 @@
-package egga.bootkick.first;
+package de.egga.first;
 
 import java.util.UUID;
 
