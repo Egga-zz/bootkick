@@ -1,4 +1,4 @@
-package egga.bootkick;
+package egga.bootkick.configuration;
 
 import com.mangofactory.swagger.plugin.EnableSwagger;
 import org.springframework.boot.SpringApplication;
@@ -11,9 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 @EnableAutoConfiguration
 @EnableSwagger
-public class Application {
+public class MainConfiguration {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(MainConfiguration.class, args);
     }
 }

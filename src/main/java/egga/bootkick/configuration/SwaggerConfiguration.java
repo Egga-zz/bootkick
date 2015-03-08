@@ -1,4 +1,4 @@
-package egga.bootkick;
+package egga.bootkick.configuration;
 
 import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
 import com.mangofactory.swagger.models.dto.ApiInfo;

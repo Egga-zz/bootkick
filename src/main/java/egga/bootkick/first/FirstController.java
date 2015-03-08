@@ -15,7 +15,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 public class FirstController {
 
     @RequestMapping(value = "/api/", method = GET, produces = APPLICATION_JSON_VALUE)
-    Dto home() {
+        Dto home() {
         return new Dto(
                 new UserDto(randomUUID(), "hank"),
                 new AccountDto(randomUUID(), "premium")

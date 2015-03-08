@@ -1,6 +1,6 @@
 package egga.bootkick.first;
 
-import egga.bootkick.Application;
+import egga.bootkick.configuration.MainConfiguration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.IntegrationTest;
@@ -17,12 +17,12 @@ import static org.hamcrest.Matchers.is;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @IntegrationTest
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = MainConfiguration.class)
 @WebAppConfiguration
 public class FirstControllerTest {
 
     @Test
     public void testName() throws Exception {
-        get("/").then().body("user.name", is(equalTo("hank")));
+        get("/api/").then().body("user.name", is(equalTo("hank")));
     }
 }
