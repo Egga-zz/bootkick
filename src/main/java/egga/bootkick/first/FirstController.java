@@ -1,19 +1,20 @@
 package egga.bootkick.first;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import static java.util.UUID.randomUUID;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 /**
  * @author egga
  */
-@Controller
+@RestController
 public class FirstController {
 
-    @RequestMapping("/")
-    @ResponseBody
+    @RequestMapping(value = "/api/", method = GET, produces = APPLICATION_JSON_VALUE)
     Dto home() {
         return new Dto(
                 new UserDto(randomUUID(), "hank"),
