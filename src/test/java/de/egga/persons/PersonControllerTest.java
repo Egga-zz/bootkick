@@ -8,7 +8,13 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static com.jayway.restassured.RestAssured.*;
+import static net.javacrumbs.jsonunit.JsonMatchers.jsonEquals;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
@@ -48,6 +54,31 @@ public class PersonControllerTest {
         delete("/api/persons/123").then().statusCode(204);
     }
 
+
+    @Test
+    public void it_should_support_complete_lifecycle() throws Exception {
+        String id = "1337";
+        String fixture = fixture("test_person");
+
+        given()
+                .body(fixture)
+                .header("Content-Type", APPLICATION_JSON_VALUE)
+
+                .put("/api/persons/" + id)
+
+                .then()
+                .statusCode(204);
+
+        get("/api/persons/" + id).
+                then().body(jsonEquals(fixture));
+    }
+
+
+    private String fixture(String fileName) throws IOException {
+        ClassLoader classLoader = getClass().getClassLoader();
+        Path path = Paths.get(classLoader.getResource(fileName + ".json").getPath());
+        return new String(Files.readAllBytes(path));
+    }
 
     private Person randomPerson() {
         Person person = new Person();
